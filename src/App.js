@@ -1,12 +1,13 @@
-import './App.css';
-import GetEmployees from "./components/GetEmployees";
+import React, { Component } from "react";
+import ListEmployees from "./components/ListEmployees";
+import "./App.css";
 
-function App() {
-  return (
-    <div className="App">
-      <GetEmployees />
-    </div>
-  );
+export default class App extends Component {
+  render() {
+    return (
+      <div>
+        <ListEmployees />
+      </div>
+    );
+  }
 }
-
-export default App;

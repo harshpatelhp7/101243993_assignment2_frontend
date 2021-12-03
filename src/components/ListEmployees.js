@@ -1,15 +1,11 @@
 import React, { useState, useEffect } from "react";
-import AddEmployee from "./AddEmployee";
 import EmployeeService from "../Services/EmployeeService";
+import { useNavigate } from "react-router-dom";
 import "../App.css";
 
 export default function ListEmployees() {
+  const navigate = useNavigate();
   const [employees, setEmployees] = useState([]);
-
-  const addEmployee = () => {
-    <AddEmployee />;
-  };
-
   useEffect(() => {
     EmployeeService.getEmployees().then((res) => {
       console.log(res.data.employees);
@@ -17,10 +13,13 @@ export default function ListEmployees() {
     });
   }, []);
 
+  const addEmployee = () => {
+    navigate("/addEmployee");
+  };
+
   return (
     <div>
-      <h1 className="header">Employee Management App</h1>
-      <button type="button" className="btn" onClick={() => addEmployee()}>
+      <button type="button" className="mybtn" onClick={addEmployee}>
         Add Employee
       </button>
 
@@ -40,6 +39,9 @@ export default function ListEmployees() {
                 <td>{employee.firstName}</td>
                 <td>{employee.lastName}</td>
                 <td>{employee.emailId}</td>
+                <td>
+                  <button type="button"wor>Details</button>
+                </td>
               </tr>
             ))}
           </tbody>

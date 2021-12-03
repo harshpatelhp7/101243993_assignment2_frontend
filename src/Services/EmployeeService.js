@@ -6,6 +6,11 @@ class EmployeeService {
   getEmployees() {
     return axios.get(EMPLOYEE_BASEURL);
   }
+
+  addEmployee(employee) {
+    return axios.post(EMPLOYEE_BASEURL, employee );
+  }
+
 }
 
 export default new EmployeeService();

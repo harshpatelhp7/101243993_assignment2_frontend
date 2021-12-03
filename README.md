@@ -1,5 +1,5 @@
-![HOME-PAGE](https://github.com/harshpatelhp7/101243993_assignment2_frontend/blob/master/homepage.JPG)
+![HOME-PAGE](./homepage.JPG?raw=true "Optional Title")
 
-![ADD-EMPLOYEE](https://github.com/harshpatelhp7/101243993_assignment2_frontend/blob/master/addEmployee.JPG)
+![ADD-Employee](./addEmployee.JPG?raw=true "Optional Title")
 
-![DETAILS-PAGE](https://github.com/harshpatelhp7/101243993_assignment2_frontend/blob/master/employeeDetails.JPG)
+![DETAILS-PAGE](./employeeDetails.JPG?raw=true "Optional Title")

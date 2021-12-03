@@ -17,6 +17,18 @@ export default function ListEmployees() {
     navigate("/addEmployee");
   };
 
+  const updateEmployee = (id) => {
+    navigate(`/updateEmployee/${id}`);
+  };
+  const deleteEmployee = (id) => {
+    EmployeeService.deleteEmployeeById(id).then((res) => {
+      setEmployees(employees.filter((employee) => employee._id !== id));
+    });
+  };
+  const viewEmployee = (id) => {
+    navigate(`/viewEmployee/${id}`);
+  };
+
   return (
     <div>
       <button type="button" className="mybtn" onClick={addEmployee}>
@@ -35,12 +47,35 @@ export default function ListEmployees() {
           </thead>
           <tbody>
             {employees.map((employee) => (
-              <tr key={employee.id}>
+              <tr key={employee._id}>
                 <td>{employee.firstName}</td>
                 <td>{employee.lastName}</td>
                 <td>{employee.emailId}</td>
-                <td>
-                  <button type="button"wor>Details</button>
+                <td className="actions">
+                  <button
+                    className="updateBtn"
+                    style={{ background: "#008a39" }}
+                    type="button"
+                    onClick={() => updateEmployee(employee._id)}
+                  >
+                    Update
+                  </button>
+                  <button
+                    className="deleteBtn"
+                    style={{ background: "#d10000" }}
+                    type="button"
+                    onClick={() => deleteEmployee(employee._id)}
+                  >
+                    Delete
+                  </button>
+                  <button
+                    className="viewBtn"
+                    style={{ background: "#27c2ba" }}
+                    type="button"
+                    onClick={() => viewEmployee(employee._id)}
+                  >
+                    View
+                  </button>
                 </td>
               </tr>
             ))}

@@ -1,10 +1,12 @@
-import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import { useNavigate, useParams } from "react-router-dom";
 import "../App.css";
 import EmployeeService from "../Services/EmployeeService";
 
-export default function CreateEmployee() {
+export default function UpdateEmployee() {
+  const params = useParams();
   const navigate = useNavigate();
+  const [id] = useState(params.id);
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [emailId, setEmailId] = useState("");
@@ -21,33 +23,46 @@ export default function CreateEmployee() {
     setEmailId(e.target.value);
   };
 
-  const saveEmployee = (e) => {
-    e.preventDefault();
+  useEffect(() => {
     try {
-      let employee = {
-        firstName: firstName,
-        lastName: lastName,
-        emailId: emailId,
-      };
-
-      EmployeeService.addEmployee(employee).then((res) => {
-        navigate("/employees");
+      EmployeeService.getEmployeeById(id).then((res) => {
+        let employee = res.data.employee;
+        setFirstName(employee.firstName);
+        setLastName(employee.lastName);
+        setEmailId(employee.emailId);
       });
     } catch (err) {
       console.log(err);
     }
+  }, []);
+
+  const updateEmployee = (e) => {
+    e.preventDefault();
+
+    let employee = {
+      firstName: firstName,
+      lastName: lastName,
+      emailId: emailId,
+    };
+
+      try {
+          EmployeeService.updateEmployeesById(id, employee).then(res => {
+              navigate("/employees")
+          })
+      } catch (err) {
+          console.log(err)
+      }
   };
 
   const cancel = () => {
     navigate("/employees");
   };
-
   return (
     <div>
       <article className="container">
         <div className="row">
           <div className="card col-md-6 offset-md-3 offset-md-3">
-            <h3 className="text-center">Add Employee</h3>
+            <h3 className="text-center">Update Employee</h3>
             <div className="card-body">
               <form>
                 <div className="form-group">
@@ -79,9 +94,9 @@ export default function CreateEmployee() {
                 <button
                   className="btn btn-success"
                   type="submit"
-                  onClick={saveEmployee}
+                  onClick={updateEmployee}
                 >
-                  Save
+                  Update
                 </button>
                 <button
                   className="btn btn-danger"

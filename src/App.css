@@ -47,7 +47,7 @@
 }
 
 .mybtn {
-  margin-top: 10%;
+  margin-top: 3%;
   font-size: 1.2em;
   width: 220px;
   height: 50px;
@@ -154,13 +154,70 @@ table tbody tr:last-of-type {
   color: #009879;
 }
 
-
-input, article, .text-center{
+input,
+article,
+.text-center {
   margin-top: 7%;
   font-size: 1.5em;
-  color:rgb(0, 129, 250);
+  color: rgb(0, 129, 250);
 }
 
-.card{
-   border: 3px solid #4c008a;
+.card {
+  border: 3px solid #4c008a;
+}
+
+.updateBtn,
+.deleteBtn,
+.viewBtn {
+  margin-right: 10px;
+  border-radius: 8px;
+  border-style: none;
+  box-sizing: border-box;
+  color: #ffffff;
+  cursor: pointer;
+  display: inline-block;
+  font-family: "Haas Grot Text R Web", "Helvetica Neue", Helvetica, Arial,
+    sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  height: 40px;
+  line-height: 20px;
+  list-style: none;
+  outline: none;
+  padding: 10px 16px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  transition: color 100ms;
+  vertical-align: baseline;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.button-1:hover,
+.button-1:focus {
+  background-color: #f082ac;
+}
+
+.detailsHeader{
+  text-align: center;
+  font-size: 2em;
+  margin-top: 2%;
+  color: #002bff;
+}
+
+.detailsContainer {
+  border: 4px solid goldenrod;
+  text-align: center;
+}
+
+.details {
+  background-image: url(https://media.giphy.com/media/26BROrSHlmyzzHf3i/giphy.gif);
+  color: transparent;
+  -moz-background-clip: text;
+  -webkit-background-clip: text;
+  text-transform: uppercase;
+  font-size: 50px;
+  margin: 10px;
 }

@@ -8,9 +8,20 @@ class EmployeeService {
   }
 
   addEmployee(employee) {
-    return axios.post(EMPLOYEE_BASEURL, employee );
+    return axios.post(EMPLOYEE_BASEURL, employee);
   }
 
+  getEmployeeById(id) {
+    return axios.get(EMPLOYEE_BASEURL + "/" + id);
+  }
+
+  updateEmployeesById(id, employee) {
+    return axios.put(EMPLOYEE_BASEURL + "/" + id, employee);
+  }
+
+  deleteEmployeeById(id) {
+    return axios.delete(EMPLOYEE_BASEURL + "/" + id);
+  }
 }
 
 export default new EmployeeService();

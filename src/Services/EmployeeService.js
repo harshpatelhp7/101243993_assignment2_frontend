@@ -1,6 +1,7 @@
 import axios from "axios";
 
-const EMPLOYEE_BASEURL = "http://localhost:3001/api/v1/employees";
+const EMPLOYEE_BASEURL =
+  "https://employee-management-backend-byharsh.netlify.app";
 
 class EmployeeService {
   getEmployees() {

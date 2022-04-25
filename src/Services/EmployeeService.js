@@ -1,6 +1,7 @@
 import axios from "axios";
 
-const EMPLOYEE_BASEURL = "https://employee-management-backend-hp.herokuapp.com";
+const EMPLOYEE_BASEURL =
+  "https://employee-management-backend-hp.herokuapp.com/api/v1/employees";
 
 class EmployeeService {
   getEmployees() {

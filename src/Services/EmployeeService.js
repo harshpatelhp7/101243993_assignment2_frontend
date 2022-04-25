@@ -1,7 +1,6 @@
 import axios from "axios";
 
-const EMPLOYEE_BASEURL =
-  "https://employee-management-backend-byharsh.netlify.app";
+const EMPLOYEE_BASEURL = "https://employee-management-backend-hp.herokuapp.com";
 
 class EmployeeService {
   getEmployees() {

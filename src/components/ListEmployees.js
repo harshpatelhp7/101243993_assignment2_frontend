@@ -30,7 +30,7 @@ export default function ListEmployees() {
   };
 
   return (
-    <div>
+    <div className="listPage">
       <button type="button" className="mybtn" onClick={addEmployee}>
         Add Employee
       </button>
@@ -84,14 +84,12 @@ export default function ListEmployees() {
       </section>
 
       <footer>
-        <h3>
-          Frontend Repo :
-          https://github.com/harshpatelhp7/EmployeeManagement_Frontend
-        </h3>
-        <h3>
-          Backend Live Server :
-          https://employee-management-backend-hp.herokuapp.com/
-        </h3>
+        <a href="https://github.com/harshpatelhp7/EmployeeManagement_Frontend">
+          Click to browse Frontend Repo on Github
+        </a>
+        <a href="https://employee-management-backend-hp.herokuapp.com">
+          Click to browse Backend Live Server
+        </a>
       </footer>
     </div>
   );

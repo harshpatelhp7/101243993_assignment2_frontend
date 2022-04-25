@@ -82,6 +82,17 @@ export default function ListEmployees() {
           </tbody>
         </table>
       </section>
+
+      <footer>
+        <h3>
+          Frontend Repo :
+          https://github.com/harshpatelhp7/EmployeeManagement_Frontend
+        </h3>
+        <h3>
+          Backend Live Server :
+          https://employee-management-backend-hp.herokuapp.com/
+        </h3>
+      </footer>
     </div>
   );
 }

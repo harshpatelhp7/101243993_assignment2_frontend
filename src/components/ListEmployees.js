@@ -84,11 +84,19 @@ export default function ListEmployees() {
       </section>
 
       <footer>
-        <a href="https://github.com/harshpatelhp7/EmployeeManagement_Frontend">
+        <a
+          href="https://github.com/harshpatelhp7/EmployeeManagement_Frontend"
+          target="_blank"
+          rel="noreferrer"
+        >
           Click to browse Frontend Repo on Github
         </a>
         <br />
-        <a href="https://employee-management-backend-hp.herokuapp.com">
+        <a
+          target="_blank"
+          rel="noreferrer"
+          href="https://employee-management-backend-hp.herokuapp.com"
+        >
           Click to browse Backend Live Server
         </a>
       </footer>
